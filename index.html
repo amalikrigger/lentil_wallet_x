@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .sidebar li:hover {
+            background-color: #34495e;
+        }
+
+        .sidebar li i {
+            margin-right: 10px;
+        }
+
+        .sidebar .bottom {
+            margin-top: auto;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            margin-left: 250px;
+            overflow-y: auto;
+        }
+
+        .header {
+            background-color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #bdc3c7;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .account-info {
+            text-align: left;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .account-info p {
+            margin: 5px 0;
+        }
+
+        .account-info strong {
+            color: #2c3e50;
+        }
+
+        .account-info h2 {
+            margin: 0;
+        }
+
+        #accountList {
+            margin: 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .account-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <ul>
+        <li><i class="fa-solid fa-house"></i> Home</li>
+        <li><i class="fas fa-exchange-alt"></i> Transfer <i class="fas fa-caret-left"></i></li>
+        <li><i class="fas fa-list"></i> Transactions</li>
+        <li><i class="fas fa-hand-holding-usd"></i> Grants</li>
+        <li><i class="fas fa-cog"></i> Settings <i class="fas fa-caret-left"></i></li>
+    </ul>
+    <ul class="bottom">
+        <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+    </ul>
+</div>
+<div class="content">
+    <div class="header">
+        <h1>Hello, [User's Name]</h1>
+    </div>
+    <div class="main-content">
+        <div class="buttons">
+            <button>Send</button>
+            <button>Request</button>
+            <button>New Account</button>
+        </div>
+        <div class="account-info">
+            <h2>Account Information</h2>
+            <p><strong>Account:</strong> <span id="accountId"></span></p>
+            <p><strong>Asset Code:</strong> <span id="assetCode"></span></p>
+            <p><strong>Asset Scale:</strong> <span id="assetScale"></span></p>
+            <p><strong>Auth Server:</strong> <span id="authServer"></span></p>
+            <p><strong>Resource Server:</strong> <span id="resourceServer"></span></p>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/c95283ecc5.js" crossorigin="anonymous"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
