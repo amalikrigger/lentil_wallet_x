@@ -1,5 +1,5 @@
 (async () => {
-    const senderAccount = await fetchAccount("http://localhost:3000/accounts/gfranklin");
+    const senderAccount = await client.fetchAccount("http://localhost:3000/accounts/gfranklin");
 
     const header = document.querySelector(".header h1");
     const accountId = document.getElementById("accountId");
@@ -15,16 +15,3 @@
     authServer.innerHTML = senderAccount.authServer;
     resourceServer.innerHTML = senderAccount.resourceServer;
 })();
-
-async function fetchAccount(url) {
-    const response = await fetch(url);
-    const accountData = await response.json();
-    return new Account(
-        accountData.id,
-        accountData.publicName,
-        accountData.assetCode,
-        accountData.assetScale,
-        accountData.authServer,
-        accountData.resourceServer
-    );
-}

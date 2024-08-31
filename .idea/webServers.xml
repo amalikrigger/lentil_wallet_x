@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f27b1b04-54a8-435d-a7e3-93593e32b987" name="Lentil Web Server">
+        <fileTransfer accessType="SFTP" host="ec2-54-197-201-156.compute-1.amazonaws.com" port="22" sshConfigId="8c374bb7-61de-4b2d-ae66-2e173e8b4330" sshConfig="ec2-user@ec2-54-197-201-156.compute-1.amazonaws.com:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
